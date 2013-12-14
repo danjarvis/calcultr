@@ -28,7 +28,9 @@ xmpp.on('chat', function(from, message) {
   console.log('%s > %s', from, message);
   if (null == sessions[from])
     sessions[from] = new Session(from);
-  xmpp.send(from, handler.response(message, sessions[from]));
+  process.nextTick(function() {
+    xmpp.send(from, handler.response(message, sessions[from]));
+  });
 });
 
 xmpp.on('disconnect', function(from) {
