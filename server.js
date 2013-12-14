@@ -13,7 +13,7 @@ if (argv.length !== 6) {
   process.exit(1);
 }
 
-var handler = new Handler('lib/handlers')
+var handler = new Handler('lib/commands')
   , sessions = {};
 
 xmpp.on('online', function(from, message) {
