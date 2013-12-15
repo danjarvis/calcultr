@@ -26,7 +26,7 @@ xmpp.on('error', function(err) {
 
 xmpp.on('chat', function(from, message) {
   console.log('%s > %s', from, message);
-  if (null == sessions[from])
+  if ('undefined' === typeof(sessions[from]))
     sessions[from] = new Session(from);
   process.nextTick(function() {
     xmpp.send(from, handler.response(message, sessions[from]));
