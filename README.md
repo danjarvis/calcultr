@@ -3,6 +3,7 @@ calcultr
 
 Small jabber robot that responds to simple commands, executes math operations, and can be easily extended. calcultr is written in Node.
 
+
 Installation
 ------------
 
@@ -13,9 +14,11 @@ Usage
 
 `$ node server.js <jid> <password> <server> <port>`
 
-Or...
+or...
 
 `$ nodemon server.js <jid> <password> <server> <port>`
+
+Once the server is running, use a jabber client to being chatting with bot. Start by typing 'help'.
 
 Extend
 ------
@@ -24,16 +27,19 @@ Building upon the supported commands is easy. Write a module and save it in the 
 
 ```javascript
 {
-  name: 'Name of command.'
+  name: 'Name of command.',
   description: 'Description of command.',
-  handler: function(input, session) {
-    // <input> is the jabber message
-    // session is the <lib/session> object for the jid that sent the message
-    // handler must return a string
+  handler: function(input, session, commands) {
+    // <input>: client jabber message
+    // <session>: Session object for the client that sent the message
+    // <commands>: current command set
+
+    // handler must return a string (response)
+    return "bacon";
   }
 }
 ```
 
-The <name> attribute is not required. If one is not supplied the file name will be used to associate the handler with a name.
+The `name` attribute is not required. If one is not supplied the file name will be used as command name.
 
 License: [MIT](http://danjarvis.mit-license.org)
