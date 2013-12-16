@@ -18,7 +18,7 @@ or...
 
 `$ nodemon server.js <jid> <password> <server> <port>`
 
-Once the server is running, use a jabber client to being chatting with bot. Start by typing 'help'.
+Once the server is running, use a jabber client to begin chatting with bot. Start by sending 'help'.
 
 Extend
 ------
@@ -40,6 +40,6 @@ Building upon the supported commands is easy. Write a module and save it in the 
 }
 ```
 
-The `name` attribute is not required. If one is not supplied the file name will be used as command name.
+The `name` attribute is not required. If one is not supplied the file name will be used as the command name.
 
 License: [MIT](http://danjarvis.mit-license.org)
