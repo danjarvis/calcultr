@@ -34,7 +34,7 @@ Building upon the supported commands is easy. Write a module and save it in the 
     // <session>: Session object for the client that sent the message
     // <commands>: current command set
 
-    // handler must return a string (response)
+    // return something (response)
     return "bacon";
   }
 }
