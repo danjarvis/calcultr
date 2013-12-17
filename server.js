@@ -15,6 +15,7 @@ if (argv.length !== 6) {
   process.exit(1);
 }
 
+require('setimmediate');
 xmpp.on('online', function(from, message) {
   console.log('calcultr is online...');
 });
@@ -29,7 +30,7 @@ xmpp.on('chat', function(from, message) {
     sessions[from] = new Session(from);
   
   console.log('%s > %s', from, message);
-  process.nextTick(function() {
+  setImmediate(function() {
     response = handler.response(message, sessions[from]);
     console.log("response > %s", response);
     xmpp.send(from, response);
