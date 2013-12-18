@@ -42,4 +42,10 @@ Building upon the supported commands is easy. Write a module and save it in the 
 
 The `name` attribute is not required. If one is not supplied the file name will be used as the command name.
 
+TODO
+----
+
+- Unit tests
+- Better command line handling
+
 License: [MIT](http://danjarvis.mit-license.org)
