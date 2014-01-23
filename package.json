@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "description": "jabber bot that tries to make maths happen.",
   "engines": {
-    "node": "*"
+    "node": ">= 0.10.0"
   },
   "dependencies": {
-    "setimmediate": "*"
     "simple-xmpp": "~0.1.18",
+    "setimmediate": "~1.0.1"
   },
   "repository": {
     "type": "git",
